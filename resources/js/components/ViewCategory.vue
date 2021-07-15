@@ -1,20 +1,10 @@
 <template>
     <div class="container">
-        <div class="col-md-12">
-            <div class="card">
-                <div class="card-header">
-                    <h3 class="card-title">Category</h3>
+        <div class="row">
+            <div class="col-6" v-for="category in lists" :key="category.id">
+                <div class="card" style="padding: 10px">
+                    <h1 class="card-title text-primary" style="text-align: center;padding-top: 10px">{{ category.name }}</h1>
                 </div>
-                <table  class="table table-hover">
-                    <tbody>
-                    <tr>
-                        <th>Name</th>
-                    </tr>
-                    <tr v-for="category in lists" :key="category.id">
-                        <td>{{ category.name }}</td>
-                    </tr>
-                    </tbody>
-                </table>
             </div>
         </div>
     </div>

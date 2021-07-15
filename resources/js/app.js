@@ -1,37 +1,3 @@
-// import Vue from 'vue';
-//
-// require('./bootstrap');
-//
-// window.Vue = require('vue');
-// import Form  from "vform";
-// import VueRouter from 'vue-router'
-// import ViewProduct from "./components/ViewProduct";
-//
-// window.Form = Form;
-//
-// Vue.use(VueRouter)
-//
-// let routes = [
-//     { path: '/dashboard', component: require('./components/Dashboard.vue').default },
-//     { path: '/users',component:require('./components/Users.vue').default},
-//     { path: '/product',component:require('./components/Product.vue').default},
-//     { path: '/category',component:require('./components/Category.vue').default},
-//     { path: '/ShowProduct',component:ViewProduct},
-//
-// ]
-//
-// const router = new VueRouter({
-//     routes
-// })
-//
-// Vue.component('example-component', require('./components/ExampleComponent.vue').default);
-// Vue.component('view-product', require('./components/ViewProduct.vue').default);
-//
-// const app = new Vue({
-//     el: '#app',
-//     router
-// });
-
 import ViewCategory from "./components/ViewCategory";
 
 require('./bootstrap');
@@ -48,6 +14,7 @@ import Product from './components/Product';
 import Category from './components/Category';
 import ViewProduct from './components/ViewProduct'
 import ExampleComponent from "./components/ExampleComponent";
+import ShowProduct from "./components/ShowProduct";
 
 let routes = [
     {
@@ -77,6 +44,10 @@ let routes = [
     {
         path: '/',
         component: ExampleComponent
+    },
+    {
+            path:'/show/:id',
+            component: ShowProduct
     }
 ]
 
@@ -87,7 +58,7 @@ const router = new VueRouter({
 Vue.component('example-component', require('./components/ExampleComponent.vue').default);
 Vue.component('view-product', require('./components/ViewProduct.vue').default);
 Vue.component('view-category',require('./components/ViewCategory.vue').default);
-
+Vue.component('show-product',require('./components/ShowProduct.vue').default);
 new Vue({
     el: '#app',
     router
